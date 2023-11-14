@@ -1,0 +1,49 @@
+.main
+        {
+            background: linear-gradient(#2e3192,#1bffff);
+            width: 500px;
+            height: 100vh;
+            margin-left:300px;
+            display: flex;
+            align-content: center;
+            justify-content: center;
+        }
+        .container
+        {
+            
+            background:linear-gradient(100deg,#ee9ca7b4,#ffdde1);
+            width: 300px;
+            height: 350px;
+            margin-top: 50px;
+            padding: 30px;
+            border-radius: 10px;
+        }
+        #Messagedisplay
+        {
+            margin: 20px;
+            color: red;
+        }
+        p{
+            font-style: italic;
+            font-size: small;
+        }
+        .bottom
+        {
+            margin-top: 20px;
+        }
+        .btn
+        {
+            height: 30px;
+            background-color: rgb(174, 197, 162);
+            font-size: 15px;
+            margin-right: 80px;
+            border-radius: 5px;
+        }
+        .btn:hover
+        {
+            cursor: pointer;
+            border: 5px;
+            background-color: rgb(48, 123, 167);
+            color:black;
+        }
+        

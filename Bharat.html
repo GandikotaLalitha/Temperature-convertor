@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Temperature Convertor</title>
+        <link rel="stylesheet" href="Bharat.css">
+    </head>
+    <body>
+        <div class="main">
+            <div class="container">
+                <h2>Temperature Convertor</h2>
+                <p>Please enter a single value and click submit to change into other temperature scales</p>
+                <table>
+                    <tr>
+                        <td><label>Celsius : </label></td>
+                        <td><input type="number" id="celsius" width="40px" placeholder="Enter temperature in degrees"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Fahrenheit : </label></td>
+                        <td><input type="number" id="fahrenheit" width="40px" placeholder="Enter temperature in fahrenheit"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Kelvin : </label></td>
+                        <td><input type="number" id="kelvin" width="40px" placeholder="Enter temperature in kevin"></td>
+                    </tr>
+                </table>
+                <div class="bottom">
+                <button class="btn" onclick="myfunc1()">Reset</button>
+                <button class="btn" onclick="myfunc2()">Submit</button>
+                <div id="Messagedisplay"></div>
+                </div>
+            </div>
+        </div>
+        <script>
+            let cel = document.getElementById("celsius");
+            let fahren = document.getElementById("fahrenheit");
+            let kel = document.getElementById("kelvin");
+            let msg = document.getElementById("Messagedisplay");
+            function myfunc1()
+            {
+                cel.value="";
+                fahren.value="";
+                kel.value="";
+                msg.textContent="";
+            }
+            function myfunc2()
+            {
+                let c = cel.value;
+                let f = fahren.value;
+                let k = kel.value;
+
+                if(c != "" && f === "" && k === "")
+                {
+                    c = parseFloat(c);
+                    fahren.value= c*(9/5) + 32;
+                    kel.value= c + 273.15;
+                    msg.textContent="";
+                }
+                else if(c === "" && f != "" && k === "")
+                {
+                    f = parseFloat(f);
+                    cel.value= (f-32) * (5/9);
+                    kel.value = (f - 32) * (5/9) + 273.15;
+                    msg.textContent="";
+                } 
+                else if(c === "" && f === "" && k != "")
+                {
+                    k = parseFloat(k);
+                    cel.value = k - 273.15;
+                    fahren.value = (k - 273.15) * (9/5) + 32;
+                    msg.textContent="";
+                } 
+                else
+                {
+                    document.getElementById("Messagedisplay").innerHTML="Please enter a single field";
+                }
+            }
+        </script>
+    </body>
+</html>
